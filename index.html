@@ -46,8 +46,8 @@
               <strong>Prizes:</strong>
               <ol>
                 <li>• Complete [1] Hack for a Syncano t-shirt</li>
-                <li>• Complete [3] Hacks for an entry in the drawing</li>
-                <li>• Complete all [5] Hacks for a $50 Gift Card to GameStop</li>
+                <li>• Complete [3] Hacks for an entry in the drawing for an iPad Mini</li>
+                <li>• Complete all [5] Hacks for a Google Chromecast (first 5 people)</li>
               </ol>
             </p>
 
@@ -59,17 +59,19 @@
         <li>
           <div class="collapsible-header">Data Object Mini Hack</div>
           <div class="collapsible-body">
-            <p>This mini hack is designed to introduce you to two basic Syncano concepts, <code>Classes</code> and <code>Data Objects</code>.  These two concepts are crucial for data storage.</p>
+            <p>This mini hack is designed to introduce you to two basic Syncano concepts, <a href="http://docs.syncano.io/docs/classes">Classes</a> and <a href="http://docs.syncano.io/docs/data-objects">Data Objects</a>.  These two concepts are crucial for data storage.</p>
 
             <p>You are building an application, and you want to store data in a class that represents the following JSON object.</p>
 
-            <pre>
-              {"creator": "Luke Skywalker",
-               "color": "green",
-               "number_of_blasts_deflected": 30,
-               "description": "A green lightsaber that was used to defeat Darth Vader and the Emperor.",
-               “is_sith”: false}
-            </pre>
+            <pre class="prettyprint"><code class=" hljs json">
+              {
+                  "<span class="hljs-attribute">creator</span>": "<span class="hljs-value">Luke Skywalker</span>",
+                  "<span class="hljs-attribute">color</span>": "<span class="hljs-value">green</span>",
+                  "<span class="hljs-attribute">number_of_blasts_deflected</span>": <span class="hljs-value">30</span>,
+                  "<span class="hljs-attribute">description</span>": "<span class="hljs-value">A green lightsaber that was used to defeat Darth Vader and the Emperor.</span>",
+                  "<span class="hljs-attribute">is_sith</span>": <span class="hljs-value">false</span>
+              }
+            </code></pre>
             <p>
               <ol>
                 <li>• In <a href="http://syncano.io">Syncano</a>, create a new <code>Lightsaber</code> <a href="http://docs.syncano.io/docs/classes">class</a> with the correct data model.</li>
