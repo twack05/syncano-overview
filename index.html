@@ -22,11 +22,39 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
   </head>
   <body>
+    <div class="navbar-fixed">
+      <nav>
+        <div class="nav-wrapper">
+          <a class="brand-logo"><img id="syncanoLogo" src="images/syncano-logo-white.png"></a>
+          <ul class="right hide-on-med-and-down">
+            <li id="navTitle">Mini Hacks</li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+
     <div class="minihacks">
       <ul class="collapsible popout" data-collapsible="accordion">
         <li>
           <div class="collapsible-header active">General Instructions</div>
-          <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
+          <div class="collapsible-body">
+            <p>
+              <strong>Welcome! Click on one of the mini hacks below to get started.</strong><br><br>
+              Each mini hack has specific instructions on how to build the application.
+              If you have any questions, click the link at the bottom of this page!
+              <br><br>
+              <strong>Prizes:</strong>
+              <ol>
+                <li>• Complete [1] Hack for a Syncano t-shirt</li>
+                <li>• Complete [3] Hacks for an entry in the drawing</li>
+                <li>• Complete all [5] Hacks for a $50 Gift Card to GameStop</li>
+              </ol>
+            </p>
+
+            <h5 class="center-align">Remember to show us once your are done with your hack!</h5>
+
+            <h4 class="center-align"><strong>Ready. Set. Hack!</strong></h4>
+          </div>
         </li>
         <li>
           <div class="collapsible-header">Data Object Mini Hack</div>
@@ -84,16 +112,75 @@
           </div>
         </li>
         <li>
-          <div class="collapsible-header">Fourth Mini Hack</div>
-          <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
+          <div class="collapsible-header">CodeBox Mini Hack</div>
+          <div class="collapsible-body">
+            <p>
+              This mini hack is designed to introduce you to <a href="http://docs.syncano.io/docs/schedules" target="_blank">Schedules</a>
+              and <a href="http://docs.syncano.io/docs/triggers" target="_blank">Triggers</a>. These two tools can expand your use of
+              <a href="http://docs.syncano.io/docs/codebox-overview" target="_blank">CodeBoxes</a> and functionality in your application.
+              If you haven’t signed up for Syncano already, please <a href="https://dashboard.syncano.io/#/signup">click here</a>.
+            </p>
+
+            <p>
+              All steps of this mini hack will be done inside the Syncano platform.
+            </p>
+
+            <ol>
+              <li><strong>Instructions</strong></li>
+              <li>• Create a new <a href="http://docs.syncano.io/docs/getting-started-with-syncano#adding-an-instance"><code>instance</code></a></li>
+              <li>• Go to the <a href="https://dashboard.syncano.io/#/solutions/list">Solutions Marketplace</a> and install the <strong>“Scheduler/Trigger Demo”</strong> solution in that new instance</li>
+              <li>• Enter your <a href="http://docs.syncano.io/docs/authentication#section-getting-an-account-key"><code>Account Key</code></a> and <code>instance name</code> in the config tab of <strong>each</strong> <code>CodeBox</code></li>
+              <li>• Create a <code>Schedule</code> (Tasks Module) that runs the “addObject” <code>CodeBox</code> every 5 minutes</li>
+              <li>• Create a <code>Trigger</code> (Tasks Module) that triggers the “updateCounter” <code>CodeBox</code> each time a new item is added to the “data” <code>Class</code>.</li>
+            </ol>
+
+            <p>If you run into any issues, take a look at our <a href="http://docs.syncano.io">docs</a>. Whenever you've completed this mini hack, swing by the Syncano booth for verification. Good luck!</p>
+          </div>
         </li>
         <li>
-          <div class="collapsible-header">Fifth Mini Hack</div>
-          <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
+          <div class="collapsible-header">Real Time File Manager Mini Hack</div>
+          <div class="collapsible-body">
+            <p>Below are instructions on how to build the Real Time File Manager. If you haven’t signed up for Syncano already, please <a href="https://dashboard.syncano.io/#/signup">click here</a>.</p>
+
+            <p><strong>Instructions</strong></p>
+
+            <ol>
+              <li>• Create a new <a href="http://docs.syncano.io/docs/getting-started-with-syncano#adding-an-instance"><code>instance</code></a></li>
+              <li>• Create a <code>Class</code> with the following <a href="http://docs.syncano.io/docs/classes#section-types-of-fields" target="_blank">schema</a></li>
+            </ol>
+
+      <pre class="prettyprint"><code class=" hljs json">
+        {
+          {
+            "<span class="hljs-attribute">name</span>": <span class="hljs-value">title</span>,
+            "<span class="hljs-attribute">type</span>": <span class="hljs-value">string</span>
+          },
+          {
+            "<span class="hljs-attribute">name</span>": <span class="hljs-value">file</span>,
+            "<span class="hljs-attribute">type</span>": <span class="hljs-value">file</span>
+          }
+        }
+      </code></pre>
+
+            <ol>
+              <li>• Create a <a href="http://docs.syncano.io/docs/realtime-communication#channels-overview" target="_blank"><code>Channel</code></a>
+                with “Other” permissions set to <strong><code>subscribe</code></strong></li>
+              <li>• Clone/Download <a href="https://github.com/devintyler/syncano-realtime-files">this github repo</a></li>
+              <li>• Follow the comment instructions in <code>js/app.js</code> from that repo</li>
+            </ol>
+
+            <p id="docs-to-help"><a href="http://docs.syncano.io/docs/realtime-communication">Real time docs to help</a><br><br>
+            If you run into any issues, take a look at our <a href="http://docs.syncano.io">docs</a>. Whenever you've completed this mini hack, swing by the Syncano booth for verification. Good luck!</p>
+          </div>
         </li>
       </ul>
     </div>
 
+    <footer>
+      <div class="container">
+        <p class="center-align">Need help? Contact us on the <a href="https://gitter.im/Syncano/community" target="_blank">Syncano Community Gitter</a></p>
+      </div>
+    </footer>
 
   </body>
 </html>
