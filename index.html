@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>Minihacks by Syncano-Community</title>
+    <title>Overview of Syncano by Syncano-Community</title>
 
     <!-- <link rel="stylesheet" href="stylesheets/styles.css">
     <link rel="stylesheet" href="stylesheets/github-dark.css"> -->
@@ -20,6 +20,8 @@
     <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
     <!-- Materialize JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
+    <!-- Syncano -->
+    <script src="https://cdn.jsdelivr.net/syncanojs/1.0.3/syncano.min.js"></script>
   </head>
   <body>
     <div class="navbar-fixed">
@@ -27,7 +29,7 @@
         <div class="nav-wrapper">
           <a class="brand-logo"><img id="syncanoLogo" src="images/syncano-logo-white.png"></a>
           <ul class="right hide-on-med-and-down">
-            <li id="navTitle">Mini Hacks</li>
+            <li id="navTitle">Syncano Overview</li>
           </ul>
         </div>
       </nav>
@@ -36,151 +38,118 @@
     <div class="minihacks">
       <ul class="collapsible popout" data-collapsible="accordion">
         <li>
-          <div class="collapsible-header active">General Instructions</div>
+          <div class="collapsible-header active">What is Syncano?</div>
           <div class="collapsible-body">
             <p>
-              <strong>Welcome! To complete these mini hacks, you will need a Syncano account. Sign up <a href="http://bit.ly/syncano-uxd">here</a>. Click on one of the mini hacks below to get started.</strong><br><br>
-              Each mini hack has specific instructions on how to build the application.
-              If you have any questions, click the link at the bottom of this page!
-              <br><br>
-              <strong>Prizes:</strong>
-              <ol>
-                <li>• Complete [1] Hack for a Syncano t-shirt</li>
-                <li>• Complete [3] Hacks for an entry in the drawing for an iPad Mini</li>
-                <li>• Complete all [5] Hacks for a Google Chromecast (first 5 people)</li>
-              </ol>
+              Welcome Derby Hacks!
+              Syncano is a platform you can use to build your applications quickly and easily. You can sign up for free at <a href="http://bit.ly/syncano-derby">bit.ly/syncano-derby</a>. We are offering a prize for the best application built using Syncano.
             </p>
-
-            <h5 class="center-align">Remember to show us once you are done with your hack!</h5>
-
-            <h4 class="center-align"><strong>Ready. Set. Hack!</strong></h4>
+            <div class="user-input">
+              <label>Account Key</label>
+              <input type="text" id="account-key" /></br>
+              <label>Instance Name</label>
+              <input type="text" id="instance-name" /></br>
+              <input type="submit" id="account-submit" />
+            </div>
+            <p id="account-message"></p>
+            <script src="javascripts/account.js"></script>
           </div>
         </li>
         <li>
-          <div class="collapsible-header">Data Object Mini Hack</div>
+          <div class="collapsible-header">User Registration</div>
           <div class="collapsible-body">
-            <p>This mini hack is designed to introduce you to two basic Syncano concepts, <a href="http://docs.syncano.io/docs/classes">Classes</a> and <a href="http://docs.syncano.io/docs/data-objects">Data Objects</a>.  These two concepts are crucial for data storage.</p>
-
-            <p>You are building an application, and you want to store data in a class that represents the following JSON object.</p>
-
-            <pre class="prettyprint"><code class=" hljs json">
-              {
-                  "<span class="hljs-attribute">creator</span>": "<span class="hljs-value">Luke Skywalker</span>",
-                  "<span class="hljs-attribute">color</span>": "<span class="hljs-value">green</span>",
-                  "<span class="hljs-attribute">number_of_blasts_deflected</span>": <span class="hljs-value">30</span>,
-                  "<span class="hljs-attribute">description</span>": "<span class="hljs-value">A green lightsaber that was used to defeat Darth Vader and the Emperor.</span>",
-                  "<span class="hljs-attribute">is_sith</span>": <span class="hljs-value">false</span>
-              }
-            </code></pre>
-            <p>
-              <ol>
-                <li>• In <a href="http://syncano.io">Syncano</a>, create a new <code>Lightsaber</code> <a href="http://docs.syncano.io/docs/classes">class</a> with the correct data model.</li>
-                <li>• Add a sample <a href="http://docs.syncano.io/docs/data-objects">data object</a> that represents the JSON object above.</li>
-                <li>• When complete, swing by the Syncano booth with your completed work to receive your free t-shirt!</li>
-              </ol>
-            </p>
+            <div class="user-input">
+              <label>Username</label>
+              <input type="text" id="username-register" /></br>
+              <label>Password</label>
+              <input type="password" id="password-register" /></br>
+              <input type="submit" id="register-submit" />
+            </div>
+            <p id="register-message"></p>
+            <script src="javascripts/register.js"></script>
           </div>
         </li>
         <li>
-          <div class="collapsible-header">User Registration Mini Hack</div>
+          <div class="collapsible-header">User Login</div>
           <div class="collapsible-body">
-            <p>This minihack is designed to show you how easy user management can be with Syncano. First, you'll want to clone this repo:</p>
-
-            <p><code>git clone http://github.com/Syncano-Community/syncano-user-reg</code></p>
-
-            <p>Open the index.html file in your browser of choice. Here, we have a simple User Registration form with input fields for username and password. The page is already wired up with JQuery and Syncano, but it's up to you to make this form work successfully! More information about User Management can be found <a href="http://docs.syncano.io/docs/user-management">here</a>.</p>
-
-            <p>To successfully complete this mini-hack, write the Javascript code necessary to allow the form to successfully create users. If done correctly, you'll be able to see these created users in your Syncano Dashboard under "Users". Once completed, swing by the Syncano booth to show us your working form!</p>
+            <div class="user-input">
+              <label>Username</label>
+              <input type="text" id="username-login" /></br>
+              <label>Password</label>
+              <input type="password" id="password-login" /></br>
+              <input type="submit" id="login-submit" />
+            </div>
+            <p id="login-message"></p>
+            <script src="javascripts/login.js"></script>
           </div>
         </li>
         <li>
-          <div class="collapsible-header">Weather Forecaster Mini Hack</div>
+          <div class="collapsible-header" id="crud">Data Management</div>
           <div class="collapsible-body">
-            <p>This mini hack is designed to introduce you to Syncano Solutions, which can be installed into your Syncano Instance to give it additional functionality. In this example, we'll install a Solution to bring in current weather data for any city and state combination. Then, we will output the current weather information onto the page.</p>
-
-            <p>To get started, clone this repo:</p>
-
-            <p><code>git clone http://github.com/Syncano-Community/syncano-weather-forecaster</code></p>
-
-            <p>Open the index.html file in the browser of your choice. This page has already been set up with a field for city and state. JQuery and Syncano are already included on the page, and the necessary jQuery has already been written for you. It's up to you to set up what's needed in your Syncano Dashboard and write the correct Javascript code to get the weather data. There are a few things you will have to do:</p>
-            <p>
-              <ol>
-                <li>• Find the appropriate Syncano Solution for Weather Data</li>
-                <li>• Set up a Webhook to access the Solution</li>
-                <li>• Write the proper Javascript code to use your Webhook</li>
-              </ol>
-            </p>
-            <p>If you run into any issues, take a look at our <a href="http://docs.syncano.io">docs</a>. Whenever you've completed this mini hack, swing by the Syncano booth for verification. Good luck!</p>
+            <div class="user-input">
+              <label>Comment Title</label>
+              <input type="text" id="crud-title" /></br>
+              <label>Comment Body</label>
+              <input type="text" id="crud-body" /></br>
+              <input type="submit" id="crud-submit"/>
+            </div>
+            <div class="comments"></div>   
+          </div>
+          <script src="javascripts/crud.js"></script>
+        </li>
+        <li>
+          <div class="collapsible-header">Run Scripts in the Cloud</div>
+          <div class="collapsible-body">
+            <div class="user-input">
+              <label>First Number</label>
+              <input type="text" id="first-number" /></br>
+              <label>Second Number</label>
+              <input type="text" id="second-number" /></br>
+              <input type="submit" id="script-submit"/>
+            </div>
+            <p id="script-message"></p>  
+          </div>
+          <script src="javascripts/script.js"></script>
+        </li>
+        <!-- <li>
+          <div class="collapsible-header">Triggers</div>
+          <div class="collapsible-body">
+           TODO: Form to create a simple data object and trigger our script 
           </div>
         </li>
         <li>
-          <div class="collapsible-header">CodeBox Mini Hack</div>
+          <div class="collapsible-header">Schedules</div>
           <div class="collapsible-body">
-            <p>
-              This mini hack is designed to introduce you to <a href="http://docs.syncano.io/docs/schedules" target="_blank">Schedules</a>
-              and <a href="http://docs.syncano.io/docs/triggers" target="_blank">Triggers</a>. These two tools can expand your use of
-              <a href="http://docs.syncano.io/docs/codebox-overview" target="_blank">CodeBoxes</a> and functionality in your application.
-              If you haven’t signed up for Syncano already, please <a href="https://dashboard.syncano.io/#/signup">click here</a>.
-            </p>
-
-            <p>
-              All steps of this mini hack will be done inside the Syncano platform.
-            </p>
-
-            <ol>
-              <li><strong>Instructions</strong></li>
-              <li>• Create a new <a href="http://docs.syncano.io/docs/getting-started-with-syncano#adding-an-instance"><code>instance</code></a></li>
-              <li>• Go to the <a href="https://dashboard.syncano.io/#/solutions/list">Solutions Marketplace</a> and install the <strong>“Scheduler/Trigger Demo”</strong> solution in that new instance</li>
-              <li>• Enter your <a href="http://docs.syncano.io/docs/authentication#section-getting-an-account-key"><code>Account Key</code></a> and <code>instance name</code> in the config tab of <strong>each</strong> <code>CodeBox</code></li>
-              <li>• Create a <code>Schedule</code> (Tasks Module) that runs the “addObject” <code>CodeBox</code> every 5 minutes</li>
-              <li>• Create a <code>Trigger</code> (Tasks Module) that triggers the “updateCounter” <code>CodeBox</code> each time a new item is created in the “data” <code>Class</code>.</li>
-            </ol>
-
-            <p>If you run into any issues, take a look at our <a href="http://docs.syncano.io">docs</a>. Whenever you've completed this mini hack, swing by the Syncano booth for verification. Good luck!</p>
+            TODO: Print out of Schedule Results
           </div>
-        </li>
+        </li> -->
         <li>
-          <div class="collapsible-header">Real Time File Manager Mini Hack</div>
+          <div class="collapsible-header">Solutions</div>
           <div class="collapsible-body">
-            <p>Below are instructions on how to build the Real Time File Manager. If you haven’t signed up for Syncano already, please <a href="https://dashboard.syncano.io/#/signup">click here</a>.</p>
-
-            <p><strong>Instructions</strong></p>
-
-            <ol>
-              <li>• Create a new <a href="http://docs.syncano.io/docs/getting-started-with-syncano#adding-an-instance"><code>instance</code></a></li>
-              <li>• Create a <code>Class</code> with the following <a href="http://docs.syncano.io/docs/classes#section-types-of-fields" target="_blank">schema</a></li>
-            </ol>
-
-      <pre class="prettyprint"><code class=" hljs json">
-        {
-          {
-            "<span class="hljs-attribute">name</span>": <span class="hljs-value">title</span>,
-            "<span class="hljs-attribute">type</span>": <span class="hljs-value">string</span>
-          },
-          {
-            "<span class="hljs-attribute">name</span>": <span class="hljs-value">file</span>,
-            "<span class="hljs-attribute">type</span>": <span class="hljs-value">file</span>
-          }
-        }
-      </code></pre>
-
-            <ol>
-              <li>• Create a <a href="http://docs.syncano.io/docs/realtime-communication#channels-overview" target="_blank"><code>Channel</code></a>
-                with “Other” permissions set to <strong><code>subscribe</code></strong></li>
-              <li>• Clone/Download <a href="https://github.com/devintyler/syncano-realtime-files">this github repo</a></li>
-              <li>• Follow the comment instructions in <code>js/app.js</code> from that repo</li>
-            </ol>
-
-            <p id="docs-to-help"><a href="http://docs.syncano.io/docs/realtime-communication">Real time docs to help</a><br><br>
-            If you run into any issues, take a look at our <a href="http://docs.syncano.io">docs</a>. Whenever you've completed this mini hack, swing by the Syncano booth for verification. Good luck!</p>
+            <div class="user-input">
+              <label>Email</label>
+              <input type="email" id="to" /></br>
+              <label>Subject</label>
+              <input type="text" id="subject" /></br>
+              <label>Text</label>
+              <input type="text" id="text" /></br>
+              <input type="submit" id="solution-submit"/>
+            </div>
+            <p id="solution-message"></p>  
           </div>
+          <script src="javascripts/solution.js"></script>
         </li>
-      </ul>
+        <!-- <li>
+          <div class="collapsible-header">Channels</div>
+          <div class="collapsible-body">
+            TODO: Channel
+          </div>
+        </li> -->
     </div>
 
     <footer>
       <div class="container">
-        <p class="center-align">Need help? Contact us on the <a href="https://gitter.im/Syncano/community" target="_blank">Syncano Community Gitter</a></p>
+        <p class="center-align">Need help? Join the <a href="http://syncano-community.github.io/slack-invite/" target="_blank">Syncano Community Slack Channel</a></p>
       </div>
     </footer>
 

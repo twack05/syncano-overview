@@ -38,3 +38,8 @@ ol li {
   /*background-color: rgb(52,71,112);*/
   background-color: rgb(91,142,221);
 }
+
+.user-input {
+  margin: 5%;
+  width: 90%;
+}
