@@ -1,5 +1,5 @@
 $('#script-submit').on('click', function() {
-	var config = {instanceName: localStorage.instanceName, name: "sum_test"},
+	var config = {instanceName: localStorage.instanceName, name: "sum"},
 		data = {x: parseInt($('#first-number').val()) , y: parseInt($('#second-number').val())};
 	connection.ScriptEndpoint.please().run(config, data)
 	.then(function(response) {
