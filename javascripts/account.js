@@ -20,7 +20,7 @@ function connectAccount() {
 	instanceName = localStorage.instanceName || $('#instance-name').val();
 
 	if (accountKey && instanceName) {
-		connection = new Syncano({accountKey: accountKey});
+		connection = Syncano({accountKey: accountKey});
 		$('#account-message').text('Account succesfully linked!');
 		localStorage.accountKey = accountKey;
 		localStorage.instanceName = instanceName;

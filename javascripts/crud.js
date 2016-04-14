@@ -1,4 +1,5 @@
 $('#crud').on('click', function() {
+	$('.comments').empty();
 	connection.DataObject.please().list({instanceName: localStorage.instanceName, className: 'comment'})
 		.then(function(result) {
 			result.forEach(function(item) {
