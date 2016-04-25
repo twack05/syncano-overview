@@ -29,7 +29,7 @@
         <div class="nav-wrapper">
           <a class="brand-logo"><img id="syncanoLogo" src="images/syncano-logo-white.png"></a>
           <ul class="right hide-on-med-and-down">
-            <li id="navTitle">Syncano Overview</li>
+            <li id="navTitle">Syncano User Authentication Demo</li>
           </ul>
         </div>
       </nav>
@@ -38,11 +38,10 @@
     <div class="minihacks">
       <ul class="collapsible popout" data-collapsible="accordion">
         <li>
-          <div class="collapsible-header active">What is Syncano?</div>
+          <div class="collapsible-header active">Your Account Info</div>
           <div class="collapsible-body">
             <p>
-              Welcome Derby Hacks!
-              Syncano is a platform you can use to build your applications quickly and easily. You can sign up for free at <a href="http://bit.ly/syncano-derby">bit.ly/syncano-derby</a>. We are offering a prize for the best application built using Syncano.
+              This demo app will show you how user authentication works with Syncano. To use this app, you'll need to create an instance in your Syncano Dashboard. Enter your Account Key and Instance Name in the fields below, and you'll be able to create and login users.
             </p>
             <div class="user-input">
               <label>Account Key</label>
@@ -58,6 +57,20 @@
         <li>
           <div class="collapsible-header">User Registration</div>
           <div class="collapsible-body">
+            <p>
+              Type a username and password below to register a new user. This form is utilizing Syncano's Javascript library like this:
+            </p>
+            <code style="white-space: pre;">
+              var connection = new Syncano({accountKey: accountKey});
+              
+              connection.User.please().create({username: username, password: password, instanceName: instanceName})
+                .then(function(response) {
+                  // do something with the response
+                })
+                .catch(function(error) {
+                  console.log(error);
+                });
+            </code>
             <div class="user-input">
               <label>Username</label>
               <input type="text" id="username-register" /></br>
@@ -65,13 +78,25 @@
               <input type="password" id="password-register" /></br>
               <input type="submit" id="register-submit" />
             </div>
-            <p id="register-message"></p>
+            <p class="center-align" id="register-message"></p>
             <script src="javascripts/register.js"></script>
           </div>
         </li>
         <li>
           <div class="collapsible-header">User Login</div>
           <div class="collapsible-body">
+            <p>
+              Enter your registered username and password below to login. This is called with the following code:
+            </p>
+            <code style="white-space: pre;">
+              connection.User.please().login({instanceName: instanceName}, {username: username, password: password})
+                .then(function(response) {
+                  // do something with response
+                })
+                .catch(function(error) {
+                  console.log(error);
+                });
+            </code>
             <div class="user-input">
               <label>Username</label>
               <input type="text" id="username-login" /></br>
@@ -79,72 +104,10 @@
               <input type="password" id="password-login" /></br>
               <input type="submit" id="login-submit" />
             </div>
-            <p id="login-message"></p>
+            <p class="center-align" id="login-message"></p>
             <script src="javascripts/login.js"></script>
           </div>
         </li>
-        <li>
-          <div class="collapsible-header" id="crud">Data Management</div>
-          <div class="collapsible-body">
-            <div class="user-input">
-              <label>Comment Title</label>
-              <input type="text" id="crud-title" /></br>
-              <label>Comment Body</label>
-              <input type="text" id="crud-body" /></br>
-              <input type="submit" id="crud-submit"/>
-            </div>
-            <div class="comments"></div>   
-          </div>
-          <script src="javascripts/crud.js"></script>
-        </li>
-        <li>
-          <div class="collapsible-header">Run Scripts in the Cloud</div>
-          <div class="collapsible-body">
-            <div class="user-input">
-              <label>First Number</label>
-              <input type="text" id="first-number" /></br>
-              <label>Second Number</label>
-              <input type="text" id="second-number" /></br>
-              <input type="submit" id="script-submit"/>
-            </div>
-            <p id="script-message"></p>  
-          </div>
-          <script src="javascripts/script.js"></script>
-        </li>
-        <!-- <li>
-          <div class="collapsible-header">Triggers</div>
-          <div class="collapsible-body">
-           TODO: Form to create a simple data object and trigger our script 
-          </div>
-        </li>
-        <li>
-          <div class="collapsible-header">Schedules</div>
-          <div class="collapsible-body">
-            TODO: Print out of Schedule Results
-          </div>
-        </li> -->
-        <li>
-          <div class="collapsible-header">Solutions</div>
-          <div class="collapsible-body">
-            <div class="user-input">
-              <label>Email</label>
-              <input type="email" id="to" /></br>
-              <label>Subject</label>
-              <input type="text" id="subject" /></br>
-              <label>Text</label>
-              <input type="text" id="text" /></br>
-              <input type="submit" id="solution-submit"/>
-            </div>
-            <p id="solution-message"></p>  
-          </div>
-          <script src="javascripts/solution.js"></script>
-        </li>
-        <!-- <li>
-          <div class="collapsible-header">Channels</div>
-          <div class="collapsible-body">
-            TODO: Channel
-          </div>
-        </li> -->
     </div>
 
     <footer>
